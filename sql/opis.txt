@@ -1,4 +1,4 @@
-1. Kucharski kurwa masz zrobić taką tabelę jak masz w przykadzie
+1. Juzecki masz zrobić taką tabelę jak masz w przykadzie
 2. Dane mają być pobierane z wemosa
 3. Potem masz przeprowadzać na nich operację:
     - masz je porządkować tak jak w przykladzie 
