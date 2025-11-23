@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="lato.css">
+</head>
+<body>
+
+
+    <header>
+        <h1><i>Witamy w ckz nr.1 w Dębicy!!</i></h1>
+    </header>
+    <section>
+        <div class="container">
+            <!-- <div class="image-column">
+                <div class="image-container" id="imageContainer">
+                    <img src="img/ladne.jpg" alt="Zdj ^ycie CKZ">
+                </div>
+            </div> -->
+            <div class="data-column">
+                <div class="weather-data">
+                    <div class="data-item">
+                        <img src="ico/temp.png" alt="Ikona temperatury">
+                        <p>Temperatura: <span id="temperature"></span>   ^C</p>
+                    </div>
+                    <div class="data-item">
+                        <img src="ico/cisc.png" alt="Ikona ciśnienia">
+                        <p>Ciśnienie: <span id="pressure"></span> hPa</p>
+                    </div>
+                    <div class="data-item">
+                        <img src="ico/slon.png" alt="Ikona nas ^Nasłonecznienia">
+                        <p>Nasłonecznienie: <span id="sunshine"></span> lux</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <script async defer>
+            // Funkcja do odświeżania strony
+        function odswiezStrone() {
+            location.reload();
+        }
+            // Uruchomienie funkcji odświeżania co minutę (60 000 milisekund)
+        setInterval(odswiezStrone, 60000);
+    </script>
+</body>
+</html>
