@@ -7,44 +7,59 @@
     <link rel="stylesheet" href="lato.css">
 </head>
 <body>
+    <div class="page-bg" aria-hidden="true"></div>
 
-
-    <header>
-        <h1><i>Witamy w ckz nr.1 w Dębicy!!</i></h1>
-    </header>
-    <section>
-        <div class="container">
-            <!-- <div class="image-column">
-                <div class="image-container" id="imageContainer">
-                    <img src="img/ladne.jpg" alt="Zdj ^ycie CKZ">
-                </div>
-            </div> -->
-            <div class="data-column">
-                <div class="weather-data">
-                    <div class="data-item">
-                        <img src="ico/temp.png" alt="Ikona temperatury">
-                        <p>Temperatura: <span id="temperature"></span>   ^C</p>
-                    </div>
-                    <div class="data-item">
-                        <img src="ico/cisc.png" alt="Ikona ciśnienia">
-                        <p>Ciśnienie: <span id="pressure"></span> hPa</p>
-                    </div>
-                    <div class="data-item">
-                        <img src="ico/slon.png" alt="Ikona nas ^Nasłonecznienia">
-                        <p>Nasłonecznienie: <span id="sunshine"></span> lux</p>
-                    </div>
-                </div>
-            </div>
+    <header class="hero">
+        <div class="hero__content">
+            <p class="hero__meta">Stacja pogodowa w Dębicy</p>
+            <h1>Aktualne warunki</h1>
+            <p class="hero__subtitle">Dane odświeżają się automatycznie co minutę</p>
         </div>
-    </section>    
-    
+    </header>
+
+    <main class="data-section">
+        <div class="container">
+            <div class="metrics-grid">
+                <article class="data-item">
+                    <img src="ico/temp.png" alt="Ikona temperatury">
+                    <div>
+                        <p class="data-label">Temperatura</p>
+                        <p class="data-value"><span id="temperature"></span> °C</p>
+                    </div>
+                </article>
+                <article class="data-item">
+                    <img src="ico/cisc.png" alt="Ikona ciśnienia">
+                    <div>
+                        <p class="data-label">Ciśnienie</p>
+                        <p class="data-value"><span id="pressure"></span> hPa</p>
+                    </div>
+                </article>
+                <article class="data-item">
+                    <img src="ico/slon.png" alt="Ikona nasłonecznienia">
+                    <div>
+                        <p class="data-label">Nasłonecznienie</p>
+                        <p class="data-value"><span id="sunshine"></span> lx</p>
+                    </div>
+                </article>
+            </div>
+            <p class="last-update">Ostatnia aktualizacja: <span id="lastUpdate"></span></p>
+        </div>
+    </main>
+
     <script async defer>
-            // Funkcja do odświeżania strony
         function odswiezStrone() {
             location.reload();
         }
-            // Uruchomienie funkcji odświeżania co minutę (60 000 milisekund)
         setInterval(odswiezStrone, 60000);
+
+        const lastUpdateElement = document.getElementById('lastUpdate');
+        if (lastUpdateElement) {
+            const formatter = new Intl.DateTimeFormat('pl-PL', {
+                hour: '2-digit',
+                minute: '2-digit',
+            });
+            lastUpdateElement.textContent = formatter.format(new Date());
+        }
     </script>
 </body>
 </html>
